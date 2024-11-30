@@ -1,3 +1,28 @@
 <!-- Aqui debes armar la vista del formulario para ingresar texto -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Texto</title>
+  </head>
+  <body>
+    <% if (errores.length > 0) { %>
+    <ul>
+      <% for (let error of errores) { %>
+      <li><%= error %></li>
+      <% } %>
+    </ul>
+    <% } %>
 
+    <h1>Formulario de Texto</h1>
+    <form action="/texts" method="POST">
+      <label for="textInput">Escribe tu texto aquí:</label>
+      <br />
+      <textarea id="textInput" name="text" rows="10" cols="50"></textarea>
+      <br />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
 <!-- Este archivo se devuelve desde la url GET /texts -->
